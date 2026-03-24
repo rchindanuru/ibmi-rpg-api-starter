@@ -28,3 +28,23 @@ Then open:
 - `http://localhost:3000/health` → should return `{ "status": "ok" }`.
 - `http://localhost:3000/api/orders/ORD1001` → returns a sample order JSON.
 - `http://localhost:3000/api/orders/ANYTHING_ELSE` → returns `404 Order not found`.
+
+## How this relates to RPG and IBM i
+
+In this starter:
+
+- `rpg/GETORDR.rpgle` represents an existing RPG program that returns order details.
+- The `api/ibmiClient.js` module is the place where you would call that program:
+  - Via a REST or SOAP web service exposed on IBM i.
+  - Via a database query that reads DB2 data.
+  - Via a program call mechanism provided by an integration library.
+
+The `api/server.js` file exposes clean REST endpoints like:
+
+- `GET /api/orders/{id}`
+
+This pattern allows you to:
+
+- Keep business logic on IBM i.
+- Expose that logic through APIs to web, mobile, and cloud applications.
+- Extend the life of IBM i systems by making them easy to integrate.
