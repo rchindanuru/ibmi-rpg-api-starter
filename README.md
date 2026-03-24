@@ -8,3 +8,23 @@ A small example that shows how to expose IBM i RPG business logic as a REST API,
 - Return clean JSON responses that other applications can call.
 
 This repository provides a simple, end-to-end example for a `GET /api/orders/{id}` endpoint.
+
+## How to run the API locally
+
+Prerequisites:
+
+- Node.js installed (v18+ recommended).
+
+Steps:
+
+```bash
+cd api
+npm install
+npm start
+```
+
+Then open:
+
+- `http://localhost:3000/health` → should return `{ "status": "ok" }`.
+- `http://localhost:3000/api/orders/ORD1001` → returns a sample order JSON.
+- `http://localhost:3000/api/orders/ANYTHING_ELSE` → returns `404 Order not found`.
