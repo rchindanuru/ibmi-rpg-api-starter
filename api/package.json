@@ -1,0 +1,12 @@
+{
+  "name": "ibmi-rpg-api-starter",
+  "version": "0.1.0",
+  "description": "Example REST API wrapper for IBM i RPG programs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0"
+  }
+}
